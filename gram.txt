@@ -1,0 +1,21 @@
+P -> program B @
+
+B -> begin S {; S} end
+S -> I EIDX = E | if E then S else S | while E do S | B  
+		| print LE{,LE} | eps
+EIDX-> '[' E ']' | eps
+LE-> L | E
+E -> E1 E2
+E2-> ~ E1 | < E1 | > E1 | eps
+E1-> T{ [+ | - | '|'] T }
+T -> F{ [* | / | & ] F }
+F -> I EIDX $| N | !F | -F | (E) 
+
+GS-> endturn | prod N | build N | buy N N | sell N N
+GF-> ?my_id | ?turn | ?players | ?active_players | ?supply | ?raw_price
+		| ?demand | ?production_price | ?money (E) | ?raw (E) | ?production (E) 
+		| ?factories (E) | ?auto_factories (E) | ?manufactured (E) 
+		| ?result_raw_sold (E) | ?result_raw_price (E) | ?result_raw_bought(E)
+		| ?result_prod_price(E)
+I -> ident
+N -> integer | float
