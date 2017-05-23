@@ -1,0 +1,40 @@
+program 
+begin
+	i = 0;
+	while i$ < 10 do
+	begin
+		a[i$] = i$;
+		i = i$ + 1;
+	end;
+	i = 0;
+	while i$ < 10 do
+	begin
+		print a[i$]$;
+		print " ";
+		i = i$ + 1;
+	end;
+	print "
+";
+	b= 2000;
+	if (a[0]$ ~ b$) | (a[0]$ < b$) then
+		a[0]=b$;
+	i = 0;
+	while i$ < 10 do
+	begin
+		print a[i$]$;
+		print " ";
+		i = i$ + 1;
+	end;
+	print "
+";
+	b = 0.88 - b$;
+	print b$;
+	print "
+";
+	r= a[0]$ - b$ - 0.5;
+	print "r = ";
+	print r$;
+	print "
+";
+end
+@
